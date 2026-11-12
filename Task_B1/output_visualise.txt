@@ -1,0 +1,4 @@
+Chart 1: network daily mean ranges 61.8 - 63.5, month mean 62.5
+Chart 2: highest Manali 100.0 | lowest Besant Nagar 36.5 | stations above 60: 7 of 12
+Chart 3: 2549 points, Pearson correlation r = -0.20
+Chart 4: worst hours [(8, 88.6), (9, 87.1), (21, 83.7)] | best hour 15 43.6

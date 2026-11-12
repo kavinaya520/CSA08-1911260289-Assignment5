@@ -1,0 +1,29 @@
+Adyar         raw rows  751  clean rows  744  duplicates 7, impossible 7, missing 110, filled 117, unit C
+Alandur       raw rows  751  clean rows  744  duplicates 7, impossible 13, missing 98, filled 111, unit F
+Anna Nagar    raw rows  751  clean rows  744  duplicates 7, impossible 6, missing 105, filled 111, unit C
+Besant Nagar  raw rows  751  clean rows  744  duplicates 7, impossible 10, missing 108, filled 117, unit C
+Guindy        raw rows  751  clean rows  744  duplicates 7, impossible 8, missing 100, filled 108, unit C
+Kodambakkam   raw rows  751  clean rows  744  duplicates 7, impossible 12, missing 96, filled 108, unit C
+Manali        raw rows  751  clean rows  744  duplicates 7, impossible 14, missing 99, filled 113, unit C
+Perungudi     raw rows  751  clean rows  744  duplicates 7, impossible 10, missing 112, filled 122, unit C
+Royapuram     raw rows  751  clean rows  744  duplicates 7, impossible 6, missing 111, filled 117, unit C
+T Nagar       raw rows  751  clean rows  744  duplicates 7, impossible 14, missing 86, filled 100, unit C
+Tambaram      raw rows  751  clean rows  744  duplicates 7, impossible 13, missing 91, filled 104, unit C
+Velachery     raw rows  751  clean rows  744  duplicates 7, impossible 10, missing 96, filled 106, unit F
+
+Total: 9012 raw rows -> 8928 clean rows loaded into airquality.db
+Cleaning and loading took 0.24 s
+
+Q1  Average PM2.5 of Adyar in October 2026
+   SQL: SELECT ROUND(AVG(r.pm25), 2) FROM readings r JOIN stations s USING (station_id) WHERE s.name = ? AND r.day BETWEEN '2026-10-01' AND '2026-10-31'
+   -> [(49.99,)] 
+
+Q2  Stations ranked by average PM2.5 (worst three)
+   SQL: SELECT s.name, ROUND(AVG(r.pm25), 1) AS avg_pm25 FROM readings r JOIN stations s USING (station_id) GROUP BY s.name ORDER BY avg_pm25 DESC LIMIT 3
+   -> [('Manali', 100.0), ('Royapuram', 81.4), ('Guindy', 74.5)] 
+
+Q3  The three hours of the day with the worst air (network average)
+   SQL: SELECT hour, ROUND(AVG(pm25), 1) AS avg_pm25 FROM readings GROUP BY hour ORDER BY avg_pm25 DESC LIMIT 3
+   -> [(8, 88.6), (9, 87.1), (21, 83.7)] 
+
+Share of stored readings that were forward-filled: 14.17 %

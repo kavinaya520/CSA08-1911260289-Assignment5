@@ -1,0 +1,15 @@
+54.0 108.0
+None
+
+Alternative: SQL built with an f-string
+  Adyar                 -> 54.0
+  Adyar' OR '1'='1      -> 81.0 (the condition became: station = 'Adyar' OR '1'='1', which is true for every row -> average of ALL rows)
+  St Thomas' Mount      -> OperationalError: near "Mount": syntax error
+
+Alternative: executemany() against execute() in a loop (time for n rows, in-memory database)
+    n rows  executemany s  execute loop s  loop / many
+     1,000         0.0006          0.0010        1.63x
+   100,000         0.0554          0.1321        2.38x
+   500,000         0.3149          0.5386        1.71x
+file database, 2,000 rows, many                    : 0.002 s
+file database, 2,000 rows, loop + commit every row : 1.550 s

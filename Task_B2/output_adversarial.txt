@@ -1,0 +1,28 @@
+=== 1. Bad files: first program against the checked program ===
+missing_column.csv   naive    -> KeyError: 'pm25'
+missing_column.csv   checked  -> ValueError: missing column(s): ['pm25']
+wrong_delimiter.csv  naive    -> KeyError: 'station'
+wrong_delimiter.csv  checked  -> ValueError: wrong delimiter ';'; expected a comma
+utf16_encoding.csv   naive    -> UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+utf16_encoding.csv   checked  -> ValueError: file is not UTF-8 (probably UTF-16 or Latin-1); re-save it as UTF-8
+empty.csv            naive    -> returned []
+empty.csv            checked  -> ValueError: file is empty
+
+=== 2. Station name with a quote character ===
+"St Thomas' Mount"     string with +  -> OperationalError: near "Mount": syntax error
+"St Thomas' Mount"     ? placeholder  -> [("St Thomas' Mount", '2026-10-01', 77.0)]
+"Adyar' OR '1'='1"     string with +  -> [('Adyar', '2026-10-01', 48.0), ('Guindy', '2026-10-01', 95.0), ("St Thomas' Mount", '2026-10-01', 77.0)]
+"Adyar' OR '1'='1"     ? placeholder  -> []
+
+=== 3. Sentiment scorer against difficult sentences ===
+WRONG | sarcasm                  | expected negative got neutral  (score +0) | Oh great, another clean day of smoke and dust.
+WRONG | sarcasm                  | expected negative got positive (score +1) | Wow, the helpful staff took three hours to answer.
+OK  | double negative          | expected positive got positive (score +2) | The service is not bad, not slow at all.
+WRONG | double negative          | expected negative got positive (score +1) | I cannot say the air is not dirty.
+WRONG | negator not next to word | expected negative got positive (score +1) | The river has never been clean.
+OK  | mixed opinion            | expected negative got negative (score -1) | The bus was fast but the station is dirty and the staff are rude.
+OK  | mixed opinion            | expected negative got negative (score -1) | Roads are clean but the factory smoke is bad.
+OK  | mixed opinion            | expected neutral  got neutral  (score +0) | Good work on the roads, bad work on the drains.
+WRONG | word not in list         | expected negative got neutral  (score +0) | The air is terrible and I cannot breathe.
+
+5 of 9 difficult sentences labelled wrongly

@@ -1,0 +1,51 @@
+id,complaint,my_label
+1,The air near Guindy is very bad and the factory smoke makes breathing difficult.,negative
+2,Smoke from the burning garbage near Manali is terrible. Children are coughing every night.,negative
+3,Nobody answers my calls. The helpline is slow and the staff were rude.,negative
+4,The dust on the Velachery road is unbearable and the road is broken.,negative
+5,Pollution at the Royapuram signal is awful in the morning.,negative
+6,I filed a complaint last week. It was ignored.,negative
+7,The river has never been clean.,negative
+8,The water tanker was late again and the street is dirty.,negative
+9,Factory smoke every evening in Alandur. This is not acceptable.,negative
+10,The monitoring display is broken and shows old data.,negative
+11,The air smells bad near the dump yard. We cannot open our windows.,negative
+12,Construction dust is everywhere. The sprinklers never come.,negative
+13,Bus service is slow and the buses are dirty.,negative
+14,"The app is bad, it crashes when I check PM2.5.",negative
+15,Open burning of leaves continues in Anna Nagar. Nothing is done.,negative
+16,Traffic smoke at T Nagar is choking us. The signal timing is poor.,negative
+17,"The air was bad again today, I felt dizzy.",negative
+18,No action was taken on my earlier complaint.,negative
+19,The garbage truck is not clean and the smell is awful.,negative
+20,"Oh great, another clean day of smoke and dust.",negative
+21,The inspector was rude and the process was slow.,negative
+22,Highly polluted air near the port. Many people have cough.,negative
+23,The air near Besant Nagar beach is clean and fresh in the mornings.,positive
+24,Thank you for the fast response. The problem was fixed in one day.,positive
+25,The staff were helpful and polite.,positive
+26,The new monitoring app is good and easy to use.,positive
+27,Roads are clean and the bus was fast.,positive
+28,Air quality has improved a lot after the tree planting drive.,positive
+29,The helpline was quick and the officer was very helpful.,positive
+30,"Not bad, the dust problem has improved.",positive
+31,The park is clean now. Good work by the corporation.,positive
+32,Excellent service. My complaint was handled fast.,positive
+33,The air is much better since the factory installed filters.,positive
+34,The new sprinklers work well and the dust is less.,positive
+35,Happy with the clean bus stop and the fast service.,positive
+36,The station display is working and shows good data.,positive
+37,"Thanks to the team, the smoke problem has stopped. Great job.",positive
+38,The road repair was done fast and the road is smooth now.,positive
+39,Please share the PM2.5 value for Adyar today.,neutral
+40,Which station is nearest to Tambaram?,neutral
+41,I would like to know how the air quality index is calculated.,neutral
+42,When will the monthly report be published?,neutral
+43,Where can I see the readings for Guindy?,neutral
+44,Is the Perungudi station working today?,neutral
+45,The monitoring station is installed near the school gate.,neutral
+46,The bus was fast but the station is dirty and the staff are rude.,negative
+47,Roads are clean but the factory smoke is bad.,negative
+48,The helpline staff were helpful but the wait was long.,neutral
+49,"Good app, but the data is wrong and the display is broken.",negative
+50,The air is better in the morning but terrible in the evening.,neutral

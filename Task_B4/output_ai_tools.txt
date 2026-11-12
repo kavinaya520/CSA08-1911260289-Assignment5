@@ -1,0 +1,43 @@
+=== B4.1 Sentiment: agreement with my own labels (50 complaints) ===
+base word list (assignment's 5 + 6 words): agree on 37 of 50 (74%)
+   (my label -> scorer label): {'negative->negative': 16, 'negative->neutral': 8, 'negative->positive': 1, 'neutral->neutral': 8, 'neutral->positive': 1, 'positive->negative': 1, 'positive->neutral': 2, 'positive->positive': 13}
+extended word list (19 positive + 25 negative words): agree on 45 of 50 (90%)
+   (my label -> scorer label): {'negative->negative': 22, 'negative->neutral': 2, 'negative->positive': 1, 'neutral->neutral': 8, 'neutral->positive': 1, 'positive->neutral': 1, 'positive->positive': 15}
+   Disagreements with the extended list:
+     # 7 mine=negative scorer=positive | The river has never been clean.
+     #18 mine=negative scorer=neutral  | No action was taken on my earlier complaint.
+     #20 mine=negative scorer=neutral  | Oh great, another clean day of smoke and dust.
+     #34 mine=positive scorer=neutral  | The new sprinklers work well and the dust is less.
+     #48 mine=neutral  scorer=positive | The helpline staff were helpful but the wait was long.
+
+=== B4.1 Summariser: sentences chosen from the multi-sentence complaints ===
+13 of 50 complaints have more than one sentence
+  (same sentence chosen) 'Smoke from the burning garbage near Manali is terrible.'
+  frequent-words: 'The helpline is slow and the staff were rude.'                        first-sentence: 'Nobody answers my calls.'
+  (same sentence chosen) 'I filed a complaint last week.'
+  (same sentence chosen) 'Factory smoke every evening in Alandur.'
+  (same sentence chosen) 'The air smells bad near the dump yard.'
+  frequent-words: 'The sprinklers never come.'                                           first-sentence: 'Construction dust is everywhere.'
+  (same sentence chosen) 'Open burning of leaves continues in Anna Nagar.'
+  (same sentence chosen) 'Traffic smoke at T Nagar is choking us.'
+  (same sentence chosen) 'Highly polluted air near the port.'
+  frequent-words: 'The problem was fixed in one day.'                                    first-sentence: 'Thank you for the fast response.'
+  frequent-words: 'Good work by the corporation.'                                        first-sentence: 'The park is clean now.'
+  frequent-words: 'My complaint was handled fast.'                                       first-sentence: 'Excellent service.'
+  (same sentence chosen) 'Thanks to the team, the smoke problem has stopped.'
+The two methods choose a different sentence for 5 of 13 complaints
+
+=== Corpus summary: all 50 complaints joined, k = 3 ===
+Top 10 important words: ['air', 'clean', 'smoke', 'bad', 'fast', 'dust', 'station', 'factory', 'staff', 'road']
+Most-frequent-words summary:
+   - The air near Guindy is very bad and the factory smoke makes breathing difficult.
+   - The bus was fast but the station is dirty and the staff are rude.
+   - Roads are clean but the factory smoke is bad.
+First-3-sentences summary:
+   - The air near Guindy is very bad and the factory smoke makes breathing difficult.
+   - Smoke from the burning garbage near Manali is terrible.
+   - Children are coughing every night.
+Top-10 words covered: frequent-words 8/10, first-k 4/10
+
+=== Speed: 50,000 complaints (the monthly volume), the 50 repeated 1,000 times ===
+sentiment scorer 0.067 s (0.0013 ms each) | frequent-words summary 0.192 s (0.0038 ms each) | first-k 0.086 s (0.0017 ms each)

@@ -1,0 +1,7 @@
+Naive Bayes, leave-one-out on 50 complaints: 23 of 50 correct (46%)
+Word list, base: 37 of 50 | word list, extended (tuned on the same 50, so optimistic): 45 of 50
+Majority-class guess (always 'negative'): 25 of 50
+
+Training on 50 complaints: model memory 30.2 KB, vocabulary 214 words
+50,000 complaints: Naive Bayes 0.547 s (0.0109 ms each) | word list 0.088 s (0.0018 ms each)
+Word list memory: 44 words, 3.1 KB

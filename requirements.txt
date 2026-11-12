@@ -1,0 +1,4 @@
+# Python 3.12
+pandas>=2.2
+matplotlib>=3.8
+# csv, sqlite3, statistics, re, logging, cProfile, tracemalloc are in the standard library

@@ -1,0 +1,10 @@
+data: 12 stations x 336 days x 24 hours = 96,768 readings; CSV file 2.3 MB
+pandas DataFrame in memory: 12.3 MB
+
+question                                   CSV + pandas (read every time) s  SQL query s
+Q1 average PM2.5 of S03 in month 10                                  0.0524       0.0002
+Q2 worst station (highest mean)                                      0.0402       0.0103
+Q3 worst hour of the day                                             0.0276       0.0192
+
+Q1 again, a short question that can use the index (one station, one day):
+CSV + pandas 0.0346 s | SQL with index 0.000107 s | ratio 324 times

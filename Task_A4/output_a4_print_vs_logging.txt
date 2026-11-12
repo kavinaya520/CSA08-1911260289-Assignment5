@@ -1,0 +1,6 @@
+100,000 calls; time in seconds and extra time per call
+no debugging at all                              0.0056 s   extra per call   0.000 us
+print() to a file, every row                     0.0971 s   extra per call   0.915 us
+print() guarded by if DEBUG (switched off)       0.0051 s   extra per call  -0.006 us
+logging.debug, level DEBUG, to a file            0.9156 s   extra per call   9.100 us
+logging.debug, level WARNING (switched off)      0.0298 s   extra per call   0.241 us

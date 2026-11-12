@@ -1,0 +1,7 @@
+Effect on the daily mean when 10% of readings are missing
+pattern of missing                     drop  forward fill  median fill   (mean absolute error of the daily mean, ug/m3; lower is better)
+random single hours                    0.89          0.81         0.86
+rush hours 8-9 missing more often      1.32          1.16         1.42
+
+Time for 1,000,000 values with 10% missing (seconds)
+drop 0.020 (O(n), result has 900,152 values) | forward fill 0.069 (O(n), 1,000,000 values) | median fill 0.217 (O(n log n) sort, 1,000,000 values)

@@ -1,0 +1,25 @@
+B3.1 correctness: 2 stations x 365 days = 730 daily means
+  loops == pandas: True | loops == SQL: True | loops == running sum: True
+  example ('S000', '2026-01-01'): loops 56.0750  pandas 56.0750  SQL 56.0750  running sum 56.0750
+
+B3.2 time in seconds (file read included for loops and pandas; SQL load and SQL query shown separately)
+stations       rows    loops  running sum   pandas  SQL load  SQL query
+       1      8,760    0.017        0.011    0.007     0.013      0.004
+      12    105,120    0.256        0.118    0.042     0.126      0.044
+     120  1,051,200    2.365        1.510    0.483     1.411      0.451
+
+B3.3 cProfile of by_loops on the 12-station file (sorted by time inside each function)
+         1395602 function calls in 0.652 seconds
+   Ordered by: internal time
+   List reduced from 43 to 6 due to restriction <6>
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+   105121    0.184    0.000    0.300    0.000 /usr/lib/python3.12/csv.py:112(__next__)
+        1    0.097    0.097    0.652    0.652 /home/claude/A5/Task_B3/compare.py:25(by_loops)
+   105122    0.058    0.000    0.060    0.000 {built-in method builtins.next}
+     4380    0.048    0.000    0.206    0.000 /usr/lib/python3.12/statistics.py:154(_sum)
+   210241    0.032    0.000    0.032    0.000 /usr/lib/python3.12/csv.py:98(fieldnames)
+   105120    0.024    0.000    0.024    0.000 {method 'as_integer_ratio' of 'float' objects}
+
+Peak memory on the 12-station file (tracemalloc):
+  store all readings (by_loops)      4.60 MB
+  running sum (by_running_sum)       1.40 MB

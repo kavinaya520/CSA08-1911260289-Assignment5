@@ -1,0 +1,8 @@
+positive | Roads are clean and the bus was fast.
+negative | Smoke from the factory, air is bad.
+negative | The staff were not helpful.
+positive | Not bad, service improved.
+
+A complaint that is labelled wrongly:
+positive | The river has never been clean.   (score +1; a person reads it as negative)
+neutral  | Oh great, another clean day of smoke and dust.   (score +0; a person reads it as negative)

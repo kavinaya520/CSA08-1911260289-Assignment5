@@ -1,0 +1,4 @@
+      rows | loops time s  loops peak MB | pandas time s  pandas peak MB | same result
+     1,000 |       0.0010            0.1 |        0.0034             0.2 | True
+   100,000 |       0.1319           11.3 |        0.0594            14.8 | True
+ 1,000,000 |       1.4706          112.0 |        0.2529           148.1 | True
